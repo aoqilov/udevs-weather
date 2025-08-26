@@ -1,27 +1,42 @@
 // Weather icon to background image mapping
+import {
+  sky,
+  skynight,
+  fewClouds,
+  fewCloudsNight,
+  brokenCloudDay,
+  brokenCloudNight,
+  rain,
+  showerRain2,
+  lighting,
+  nightsnow,
+  snow,
+  foogy,
+} from "../assets";
+
 export const getWeatherBackground = (weatherIcon: string): string => {
   const iconMap: { [key: string]: string } = {
-    "01d": "/src/assets/sky.jpg", // clear sky day
-    "01n": "/src/assets/skynight.jpg", // clear sky night - updated
-    "02d": "/src/assets/few-clouds.jpg", // few clouds day
-    "02n": "/src/assets/few-clouds-night.jpg", // few clouds night - updated
-    "03d": "/src/assets/broken-cloud-day.jpg", // scattered clouds
-    "03n": "/src/assets/broken-cloud-night.jpg",
-    "04d": "/src/assets/broken-cloud-day.jpg", // broken clouds
-    "04n": "/src/assets/broken-cloud-night.jpg",
-    "09d": "/src/assets/rain.jpg", // shower rain
-    "09n": "/src/assets/shower-rain2.jpg",
-    "10d": "/src/assets/rain.jpg", // rain
-    "10n": "/src/assets/rain.jpg",
-    "11d": "/src/assets/lighting.jpg", // thunderstorm
-    "11n": "/src/assets/lighting.jpg",
-    "13d": "/src/assets/snow.jpg", // snow
-    "13n": "/src/assets/nightsnow.jpg", // night snow - updated
-    "50d": "/src/assets/foogy.jpg", // mist/fog
-    "50n": "/src/assets/foogy.jpg",
+    "01d": sky, // clear sky day
+    "01n": skynight, // clear sky night - updated
+    "02d": fewClouds, // few clouds day
+    "02n": fewCloudsNight, // few clouds night - updated
+    "03d": brokenCloudDay, // scattered clouds
+    "03n": brokenCloudNight,
+    "04d": brokenCloudDay, // broken clouds
+    "04n": brokenCloudNight,
+    "09d": rain, // shower rain
+    "09n": showerRain2,
+    "10d": rain, // rain
+    "10n": rain,
+    "11d": lighting, // thunderstorm
+    "11n": lighting,
+    "13d": snow, // snow
+    "13n": nightsnow, // night snow - updated
+    "50d": foogy, // mist/fog
+    "50n": foogy,
   };
 
-  return iconMap[weatherIcon] || "/src/assets/sky.jpg";
+  return iconMap[weatherIcon] || sky;
 };
 
 // Weather icon to dominant color mapping for info box background

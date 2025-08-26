@@ -14,6 +14,7 @@ import {
   formatDate,
 } from "./utils/weather";
 import { getWeatherIcon } from "./utils/getWeatherIcon";
+import { sky } from "./assets";
 import "./App.scss";
 import SunCloudSvg from "./assets/icons/SunCloudSvg";
 import {
@@ -93,9 +94,10 @@ const App: React.FC = () => {
   useEffect(() => {
     fetchWeatherData(selectedCity);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const backgroundImage = currentWeather
     ? getWeatherBackground(currentWeather.weather[0].icon)
-    : "/src/assets/sky.jpg";
+    : sky;
 
   const infoBoxColor = currentWeather
     ? getWeatherColor(currentWeather.weather[0].icon)
