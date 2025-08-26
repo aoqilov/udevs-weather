@@ -1,5 +1,9 @@
 import React from "react";
-import type { propsSvg } from "./sunSvg";
+type propsSvg = {
+  width?: string;
+  height?: string;
+  fill?: string;
+};
 
 const Moon: React.FC<propsSvg> = ({
   width = "80px",

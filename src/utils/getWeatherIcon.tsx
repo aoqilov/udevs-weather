@@ -1,5 +1,4 @@
 import React from "react";
-import SunSvg from "../assets/icons/sunSvg";
 import SunCloudSvg from "../assets/icons/SunCloudSvg";
 import CloudSvg from "../assets/icons/CloudSvg";
 import Cloud2xSvg from "../assets/icons/Cloud2xSvg";
@@ -9,6 +8,7 @@ import ThunderSvg from "../assets/icons/ThunderSvg";
 import SnowSvg from "../assets/icons/SnowSvg";
 import Mist from "../assets/icons/Mist";
 import Moon from "../assets/icons/Moon";
+import SunSvg from "../assets/icons/SunSvg";
 
 interface WeatherIconProps {
   width?: string;
