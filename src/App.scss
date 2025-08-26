@@ -143,31 +143,8 @@ body {
             }
           }
         }
-
-        .city-select {
-          width: 100%;
-          padding: 12px;
-          height: 40px;
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          border-radius: 8px;
-          color: $primary-color;
-          font-size: 14px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-
-          &:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.25);
-          }
-
-          option {
-            background: rgba(0, 0, 0, 0.723);
-            color: $primary-color;
-          }
+        .city-dropdown {
+          margin-bottom: 20px;
         }
       }
 
@@ -336,8 +313,7 @@ body {
   .weather-app .sidebar .search-container input {
     font-size: 16px;
   }
-
-  .weather-app .sidebar .city-select {
+  .weather-app .sidebar .city-dropdown {
     font-size: 16px;
   }
 
@@ -366,9 +342,8 @@ body {
   .weather-app .sidebar .search-container button {
     height: 48px;
   }
-
   .weather-app .sidebar .search-container input,
-  .weather-app .sidebar .city-select {
+  .weather-app .sidebar .city-dropdown {
     height: 48px;
   }
 }

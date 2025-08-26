@@ -17,6 +17,7 @@ import { getWeatherIcon } from "./utils/getWeatherIcon";
 import { sky } from "./assets";
 import "./App.scss";
 import SunCloudSvg from "./assets/icons/SunCloudSvg";
+import CustomDropdown from "./components/CustomDropdown";
 import {
   Clock,
   Cloudy,
@@ -157,7 +158,6 @@ const App: React.FC = () => {
         <div className="locations">
           <div className="search-section">
             {error && <div className="error-message">{error}</div>}
-
             <div className="search-container">
               <input
                 type="text"
@@ -172,21 +172,19 @@ const App: React.FC = () => {
               >
                 <Search />
               </button>
-            </div>
-
-            <select
-              className="city-select"
+            </div>{" "}
+            <CustomDropdown
+              options={UZBEKISTAN_REGIONS.map((region) => ({
+                value: region.name,
+                label: region.nameEn,
+                subLabel: region.nameUz,
+              }))}
               value={selectedCity}
-              onChange={(e) => handleCitySelect(e.target.value)}
-            >
-              {" "}
-              <option value="">{TEXT.SELECT_REGION}</option>
-              {UZBEKISTAN_REGIONS.map((region) => (
-                <option key={region.name} value={region.name}>
-                  {region.nameEn} ({region.nameUz})
-                </option>
-              ))}
-            </select>
+              onChange={handleCitySelect}
+              placeholder={TEXT.SELECT_REGION}
+              className="city-dropdown"
+              infoBoxColor={infoBoxColor}
+            />
           </div>
 
           <p className="title">{TEXT.RECENT_SEARCHES}</p>
